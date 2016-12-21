@@ -6,6 +6,7 @@ import java.util.List;
 public class Question implements Serializable {
     private String question;
     private List<String> answers;
+    private int positionOfCorrectAnswer;
 
     public String getQuestion() {
         return question;
@@ -21,5 +22,13 @@ public class Question implements Serializable {
 
     public void setAnswers(List<String> answers) {
         this.answers = answers;
+    }
+
+    public int getPositionOfCorrectAnswer() {
+        return positionOfCorrectAnswer;
+    }
+
+    public void setPositionOfCorrectAnswer(int positionOfCorrectAnswer) {
+        this.positionOfCorrectAnswer = positionOfCorrectAnswer;
     }
 }
