@@ -15,7 +15,10 @@ public class RandomQuestionsGeneratorTest {
     @Test
     public void generatesCorrectly() throws Exception {
         System.out.println(String.format("Pytanie %s, odpowiedź %s na pozycji %d",
-                question.getQuestion(), question.getAnswers().get(0), question.getPositionOfCorrectAnswer()));
+                question.getQuestion(), question.getAnswers().get(question.getPositionOfCorrectAnswer()), question.getPositionOfCorrectAnswer()));
+        for (String answer : question.getAnswers()) {
+            System.out.print(answer + " ");
+        }
         assertNotNull(questionDatabase);
     }
 }

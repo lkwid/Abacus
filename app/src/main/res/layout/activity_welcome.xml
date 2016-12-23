@@ -15,6 +15,7 @@
         android:id="@+id/name_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textCapSentences"
         android:hint="Wprowadź imię" />
     <Button
         android:id="@+id/next_button"

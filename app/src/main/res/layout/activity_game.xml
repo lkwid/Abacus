@@ -10,4 +10,50 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="lkwid.quizabacus.GameActivity">
 
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Przykładowe pytanie" />
+
+    <RadioGroup
+        android:id="@+id/answer_choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question">
+
+        <RadioButton
+            android:id="@+id/answer_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odpowiedź 1" />
+
+        <RadioButton
+            android:id="@+id/answer_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odpowiedź 2" />
+
+        <RadioButton
+            android:id="@+id/answer_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odpowiedź 3" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_below="@id/answer_choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wróć"/>
+    <Button
+        android:id="@+id/next"
+        android:layout_below="@id/answer_choice"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dalej" />
+
+
 </RelativeLayout>

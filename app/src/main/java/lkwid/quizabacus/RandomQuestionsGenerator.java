@@ -9,15 +9,16 @@ public class RandomQuestionsGenerator implements QuestionsDatabase {
 
     @Override
     public List<Question> generateQuestions() {
-        Random random = new Random();
-        Question question = new Question();
         List<Question> setOfQuestions = new LinkedList<>();
-        List<String> answers = new LinkedList<>();
-        int left = random.nextInt(QUIZ_DIFFICULTY), right = random.nextInt(QUIZ_DIFFICULTY);
-        int correctAnswer;
-        int positionOfCorrectAnswer;
+        Random random = new Random();
 
         for (int i = 0; i < 100; i++) {
+            Question question = new Question();
+            int left = random.nextInt(QUIZ_DIFFICULTY-1)+1, right = random.nextInt(QUIZ_DIFFICULTY-1)+1;
+            int correctAnswer;
+            int positionOfCorrectAnswer;
+            List<String> answers = new LinkedList<>();
+
             question.setQuestion(String.format("%d + %d = ?", left, right));
             correctAnswer = left + right;
 
@@ -33,7 +34,6 @@ public class RandomQuestionsGenerator implements QuestionsDatabase {
             setOfQuestions.add(question);
 
         }
-
         return setOfQuestions;
     }
 }
