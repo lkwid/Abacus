@@ -125,5 +125,8 @@ public class GameActivity extends AppCompatActivity {
                 correctAnswers++;
             }
         }
+
+        QuizResultDialogFragment.createDialog(mPlayerName, correctAnswers, questionsCount)
+                .show(getSupportFragmentManager(),"");
     }
 }
