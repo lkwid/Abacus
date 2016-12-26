@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class RandomQuestionsGenerator implements QuestionsDatabase {
     public static final int NUMBERS_RANGE = 10;
-    private String answerCandidate;
+    public static final int DIFFICULTY_LEVEL = 2;
 
     @Override
     public List<Question> generateQuestions() {
@@ -15,27 +15,17 @@ public class RandomQuestionsGenerator implements QuestionsDatabase {
 
         for (int i = 0; i < 100; i++) {
             Question question = new Question();
-            int left = random.nextInt(NUMBERS_RANGE - 1) + 1, right = random.nextInt(NUMBERS_RANGE - 1) + 1;
+            Difficulty level = new DifficultyLevel2();
             int correctAnswer;
             int positionOfCorrectAnswer;
             List<String> answers = new LinkedList<>();
 
-            char sign = '+';
-            if (random.nextInt(2) == 1)
-                sign = '-';
-            correctAnswer = left + right;
-            if (sign == '-') {
-                if (left < right) {
-                    right = random.nextInt(left) + 1;
-                }
-                correctAnswer = left - right;
-            }
-            question.setQuestion(String.format("%d %c %d = ?", left, sign, right));
+            correctAnswer = level.getCorrectAnswer(question);
 
             do {
                 String answerCandidate;
                 do {
-                    answerCandidate = (random.nextInt(NUMBERS_RANGE * 2) + "");
+                    answerCandidate = (random.nextInt(NUMBERS_RANGE * DIFFICULTY_LEVEL) + "");
                 } while (answerCandidate.equals(correctAnswer+""));
                 if (answers.size() == 0)
                     answers.add(answerCandidate);

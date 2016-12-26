@@ -13,7 +13,7 @@ public class Question implements Serializable {
     }
 
     public void setQuestion(String question) {
-        this.question = question;
+        this.question = question + " = ?";
     }
 
     public List<String> getAnswers() {
