@@ -33,7 +33,8 @@ public class QuizResultDialogFragment extends DialogFragment {
         setCancelable(false);
         AlertDialog dialog = new AlertDialog.Builder(getActivity())
                 .setTitle("Wynik quizu")
-                .setMessage(String.format("Witaj %s! Twój wynik to %d poprawnych odpowiedzi na %d.",
+                .setMessage(String.format("Witaj %s! Twój wynik to:" +
+                        "\n%d poprawnych odpowiedzi na %d.",
                         playerName, correctAnswers, questionsCount))
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
