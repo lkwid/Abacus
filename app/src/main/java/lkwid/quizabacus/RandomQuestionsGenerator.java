@@ -5,24 +5,27 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomQuestionsGenerator implements QuestionsDatabase {
+    public static int numbersRange;
+    public static int difficultyLevel;
+
     @Override
-    public List<Question> generateQuestions() {
+    public List<Question> generateQuestions(int numbersRange, int difficultyLevel) {
         List<Question> setOfQuestions = new LinkedList<>();
         Random random = new Random();
 
         for (int i = 0; i < 100; i++) {
             Question question = new Question();
-            Difficulty level = new DifficultyLevelSet();
+            Difficulty difficulty = new DifficultyLevelSet();
             int correctAnswer;
             int positionOfCorrectAnswer;
             List<String> answers = new LinkedList<>();
 
-            correctAnswer = level.getCorrectAnswer(question);
+            correctAnswer = difficulty.getCorrectAnswer(question);
 
             do {
                 String answerCandidate;
                 do {
-                    answerCandidate = (random.nextInt(Difficulty.NUMBERS_RANGE * (Difficulty.DIFFICULTY+1))+"");
+                    answerCandidate = (random.nextInt(numbersRange * (difficultyLevel+1))+"");
                 } while (answerCandidate.equals(correctAnswer+""));
                 if (answers.size() == 0)
                     answers.add(answerCandidate);

@@ -3,14 +3,13 @@ package lkwid.quizabacus;
 import java.util.Random;
 
 public abstract class Difficulty {
-    public static final int NUMBERS_RANGE = 10;
-    public static final int DIFFICULTY = 4;
     Random random = new Random();
-    protected int left = random.nextInt(NUMBERS_RANGE - 1) + 1, rightL1 = random.nextInt(NUMBERS_RANGE - 1) + 1;
+    protected int left = random.nextInt(RandomQuestionsGenerator.numbersRange - 1) + 1, rightL1 = random.nextInt(RandomQuestionsGenerator.numbersRange - 1) + 1;
     protected int correctAnswer;
     protected String askedQuestion;
 
     public int getCorrectAnswer(Question question) {
+        int left = random.nextInt(RandomQuestionsGenerator.numbersRange - 1) + 1, rightL1 = random.nextInt(RandomQuestionsGenerator.numbersRange - 1) + 1;
         char sign = getSign();
         correctAnswer = left + rightL1;
         if (sign == '-') {

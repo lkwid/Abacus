@@ -1,13 +1,13 @@
 package lkwid.quizabacus;
 
 public class DifficultyLevelSet extends Difficulty {
-    private int rightL2 = random.nextInt(NUMBERS_RANGE - 1) + 1;
+    private int rightL2 = random.nextInt(RandomQuestionsGenerator.numbersRange - 1) + 1;
     private int questionDifficultyBuilder = 1;
 
     @Override
     public int getCorrectAnswer(Question question) {
         correctAnswer = super.getCorrectAnswer(question);
-        while (questionDifficultyBuilder < DIFFICULTY) {
+        while (questionDifficultyBuilder < RandomQuestionsGenerator.difficultyLevel) {
             char sign = getSign();
             if (sign == '-') {
                 if (correctAnswer < rightL2) {

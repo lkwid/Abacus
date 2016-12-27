@@ -5,9 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -31,14 +28,8 @@ public class WelcomeActivity extends AppCompatActivity {
     void openNextScreen() {
         Random random = new Random();
         String name = mEditText.getText().toString();
-        Intent greetingsIntent = new Intent(this,GameActivity.class);
-        greetingsIntent.putExtra(GameActivity.EXTRA_NAME, name);
-        List<Question> questions = mQuestionsDatabase.generateQuestions();
-        while (questions.size() > 5) {
-            questions.remove(random.nextInt(questions.size()));
-        }
-        Collections.shuffle(questions);
-        greetingsIntent.putExtra(GameActivity.EXTRA_QUESTIONS, new ArrayList<>(questions));
+        Intent greetingsIntent = new Intent(this,DifficultyActivity.class);
+        greetingsIntent.putExtra(DifficultyActivity.EXTRA_NAME, name);
 
         startActivity(greetingsIntent);
     }
