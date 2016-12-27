@@ -3,8 +3,9 @@ package lkwid.quizabacus;
 import java.util.Random;
 
 public abstract class Difficulty {
-    Random random = new Random();
     public static final int NUMBERS_RANGE = 10;
+    public static final int DIFFICULTY = 4;
+    Random random = new Random();
     protected int left = random.nextInt(NUMBERS_RANGE - 1) + 1, rightL1 = random.nextInt(NUMBERS_RANGE - 1) + 1;
     protected int correctAnswer;
     protected String askedQuestion;
