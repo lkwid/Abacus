@@ -16,6 +16,7 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnItemClick;
 
 public class DifficultyActivity extends AppCompatActivity {
     static final String EXTRA_NAME = "name";
@@ -31,12 +32,12 @@ public class DifficultyActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.image_button_easy)
+    @OnClick(R.id.easy_button)
     void easyGame() {
         setDifficulty(10, 1);
     }
 
-    @OnClick(R.id.image_button_hard)
+    @OnClick(R.id.hard_button)
     void hardGame() {
         setDifficulty(20, 2);
     }

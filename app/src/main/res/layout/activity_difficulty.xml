@@ -18,14 +18,14 @@
         android:text="Wybierz poziom trudności" />
 
     <FrameLayout
-        android:id="@+id/easy_button"
+        android:id="@+id/level_easy"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true">
+        android:onClick="">
 
         <ImageButton
-            android:id="@+id/image_button_easy"
+            android:id="@+id/easy_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/pinkie_button" />
@@ -41,17 +41,18 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/hard_button"
+        android:id="@+id/level_hard"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:onClick="">
 
         <ImageButton
-            android:id="@+id/image_button_hard"
+            android:id="@+id/hard_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/image_button_easy"
+            android:layout_toEndOf="@id/easy_button"
             android:src="@drawable/twilight_button" />
 
         <TextView
