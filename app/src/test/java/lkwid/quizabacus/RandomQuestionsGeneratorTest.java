@@ -9,7 +9,7 @@ import static junit.framework.Assert.assertNotNull;
 
 public class RandomQuestionsGeneratorTest {
     QuestionsDatabase generator = new RandomQuestionsGenerator();
-    List<Question> questionDatabase = generator.generateQuestions();
+    List<Question> questionDatabase = generator.generateQuestions(10, 1);
     Question question = questionDatabase.get(0);
 
     @Test
